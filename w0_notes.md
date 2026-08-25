@@ -10,3 +10,5 @@ print(variable_name)
 ] ---> end="" will delete the new line of 2nd print. wahtever in the "" of end will be shown in between both print fuction
 
 print("pronpt to show as output", variable name, sep="") ---> sep="" will add whatever inside the "" in between both argument of the print function
+
+***need to updated later

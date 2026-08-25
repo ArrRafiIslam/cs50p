@@ -28,6 +28,26 @@ print("CS50P Lecture 0 - Functions")
 # combine all the above functions
 #name = name.strip().title()
 
-#split user name into first and last name and print it
+# split user name into first and last name and print it
 #first, last = name.split(" ")
 #print(f"hello, {first} {last}")
+
+# def / create new function
+#def hello(to="world"):
+    #print("hello", to)
+
+#name = input("What is your name?")
+#hello(name)
+#print(name)
+#hello()
+#hello(name)
+
+# main function calling
+def main():
+    name = input("What is your name?")
+    hello(name)
+
+def hello(to="world"):
+    print("hello", to)
+
+main()
