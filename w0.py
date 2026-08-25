@@ -1,0 +1,1 @@
+print("CS50P Lecture 0 - Functions")
