@@ -1,3 +1,3 @@
-# CS50P "Week 1 - Loops" Notes
+# CS50P "Week 2 - Loops" Notes
 
 ***need to updated later
