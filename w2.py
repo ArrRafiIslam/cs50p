@@ -112,6 +112,10 @@ students = ["Hermione", "Harry", "Ron", "Draco"]
 houses = ["Gryffindor", "Gryffindor", "Gryffindor", "Slytherin"]
 '''
 
+from os import name
+from turtle import clear
+
+
 students={
     "Hermione": "Gryffindor",
     "Harry": "Gryffindor",
@@ -125,13 +129,59 @@ print(students["Ron"])
 print(students["Draco"])
 '''
 
+'''
 for s in students:
-    print(s, students[s])
-
+    print(s, students[s], sep=", ")
+'''
 # video stamp 54:20
+'''
+students=[
+    {"name": "Harmione", "house": "Gryffindor", "patronus": "otter"},
+    {"name": "Harry", "house": "Gryffindor", "patronus": "Stag"},
+    {"name": "Ron", "house": "Gryffindor", "patronus": "Jack Russell terrier"},
+    {"name": "Draco", "house": "Slytherin", "patronus": None}
+]
+for s in students:
+    print(s["name"], s["house"], s["patronus"], sep=", ")
+'''
+# mario game
+'''
+def main():
+    print_column(3)
+    print_row(4)
 
+def print_column(height):
+    for _ in range(height):
+        print("#")
+def print_row(width):
+    print("?" * width)
 
+main()
+'''
+'''
+def main():
+    print_square(3)
 
+def print_square(size):
+    for i in range(size):
+        for j in range(size):
+            print("#", end="")
+        print()
+    
+main()
+'''
+
+def main():
+    print_square(3)
+
+def print_square(size):
+    for i in range(size):
+        print_row(size)
+
+def print_row(width):
+    print("#"*width)
+
+main()
 
 
 
