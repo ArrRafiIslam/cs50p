@@ -110,15 +110,144 @@ for i in sorted(students, key = get_name):
 
 # times tamp 50:35
 '''
+# Value Error
+
+'''
 students = []
 
 with open("students.csv") as file:
     for line in file:
-        name, house = line.rstrip().split(",")
-        students.append({"name": name, "house": house})
+        name, home = line.rstrip().split(",")
+        students.append({"name": name, "home": home})
 
 for i in sorted(students, key =lambda i: i["name"]):
-    print(f"{i['name']} is in {i['house']}")
+    print(f"{i['name']} is in {i['home']}")
+'''
+# read in csv
+
+'''
+import csv
+students = []
+
+with open("students.csv") as file:
+    reader = csv.reader(file)
+    #for row in reader:
+    for name,home in reader:
+        #students.append({"name": row[0], "home": row[1]})
+        students.append({"name": name, "home": home})
+
+for i in sorted(students, key =lambda i: i["name"]):
+    print(f"{i['name']} is in {i['home']}")
+'''
+'''
+import csv
+students = []
+
+with open("students.csv") as file:
+    reader = csv.reader(file)
+    #for row in reader:
+    for name,home in reader:
+        #students.append({"name": row[0], "home": row[1]})
+        students.append({"name": name, "home": home})
+
+for i in sorted(students, key =lambda i: i["name"]):
+    print(f"{i['name']} is in {i['home']}")
+'''
+# csv as dictionary reader
+'''
+import csv
+students = []
+
+with open("students.csv") as file:
+    reader = csv.DictReader(file)
+    #for row in reader:
+    for row in reader:
+        #students.append({"name": row[0], "home": row[1]})
+        students.append({"name": row["name"], "home": row["home"]})
+
+for i in sorted(students, key =lambda i: i["name"]):
+    print(f"{i['name']} is in {i['home']}")
+
+'''
+
+# write in csv
+'''
+import csv
+name = input("Whats your name? ")
+home = input("Wheres your home? ")
+
+with open("students.csv", "a", newline="") as file:
+    #writer = csv.writer(file)
+    #writer.writerow([name,home])
+    writer = csv.DictWriter(file, fieldnames=["name", "home"])
+    writer.writerow({"name":name, "home":home })
+'''
+
+
+# binary files and PIL
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
