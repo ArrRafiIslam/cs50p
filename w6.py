@@ -94,7 +94,7 @@ with open("students.csv") as file:
 for i in students:
     print(f"{i['name']} is in {i['house']}")   
 '''
-
+'''
 students = []
 
 with open("students.csv") as file:
@@ -107,6 +107,20 @@ def get_name(student):
 
 for i in sorted(students, key = get_name):
     print(f"{i['name']} is in {i['house']}")
+
+# times tamp 50:35
+'''
+students = []
+
+with open("students.csv") as file:
+    for line in file:
+        name, house = line.rstrip().split(",")
+        students.append({"name": name, "house": house})
+
+for i in sorted(students, key =lambda i: i["name"]):
+    print(f"{i['name']} is in {i['house']}")
+
+
 
 
 
