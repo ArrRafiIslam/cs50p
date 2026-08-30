@@ -184,8 +184,6 @@ with open("students.csv", "a", newline="") as file:
 '''
 
 
-# binary files and PIL
-
 
 
 
