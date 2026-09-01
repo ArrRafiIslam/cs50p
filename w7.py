@@ -77,15 +77,44 @@ if re.search(rf"^[a-zA-Z0-9_]+@[a-zA-Z0-9_]+\\.edu$", email):
 else:
     print("Invalid")
 '''
+'''
+import re
+email = input("Whats your email? ").strip()
+
+#if re.search(rf"^\\w+@\\w+\\.edu$", email):
+if re.search(rf"^\\w+@\\w+\\.(com|net|edu|gov|org|io)$", email):
+    print("valid")
+else:
+    print("Invalid")
+'''
+'''
+import re
+email = input("Whats your email? ").strip()
+
+if re.search(rf"^\\w+@\\w+\\.(com|net|edu|gov|org|io)$", email):
+    print("valid")
+else:
+    print("Invalid")
+'''
+# Case Sentivity
+'''
+import re
+email = input("Whats your email? ").strip()
+
+if re.search(rf"^\\w+@\\w+\\.(com|net|edu|gov|org|io)$", email, re.IGNORECASE):
+    print("valid")
+else:
+    print("Invalid")
+'''
 
 import re
 email = input("Whats your email? ").strip()
 
-#if re.search(rf"^\w+@\w+\.edu$", email):
-if re.search(rf"^\w+@\w+\.(com|net|edu|gov|org|io)$", email):
+if re.search(rf"^\w+@(\w+\.)?\w+\.(com|net|edu|gov|org|io)$", email, re.IGNORECASE):
     print("valid")
 else:
     print("Invalid")
+
 
 
 
