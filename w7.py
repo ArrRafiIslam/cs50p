@@ -143,7 +143,7 @@ if matches:
     name = matches.group(2) + " " + matches.group(1)
 print(f"hello, {name}")
 '''
-
+'''
 import re
 name = input("What's your name? ").strip()
 #matches = re.search(r"^(.+), *(.+)$", name)
@@ -151,7 +151,37 @@ name = input("What's your name? ").strip()
 if matches:= re.search(r"^(.+), *(.+)$", name):
     name = matches.group(2) + " " + matches.group(1)
 print(f"hello, {name}")
+'''
 
+
+# Extracting user input
+
+'''
+url = input("URL: ").strip()
+#print(url)
+#username = url.replace("https://twitter.com/", "")
+username = url.removeprefix("https://twitter.com/")
+print(f"username: {username}")
+'''
+
+'''
+import re
+url = input("URL: ").strip()
+#username = re.sub(r"https://twitter.com/", "", url)
+username = re.sub(r"^(https?://)?(www\\.)?twitter\\.com/", "", url)
+print(f"Username: {username}")
+'''
+'''
+import re
+url = input("URL: ").strip()
+matches = re.search(r"^https?://(www\\.)?twitter\\.com/(.+)$", url, re.IGNORECASE)
+if matches:
+    print(f"Username: ", matches.group(2))
+'''
+import re
+url = input("URL: ").strip()
+if matches := re.search(r"^https?://(?:www\.)?twitter\.com/([a-z0-9_]+)", url, re.IGNORECASE):
+    print(f"Username: ", matches.group(1))
 
 
 
