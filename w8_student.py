@@ -207,6 +207,8 @@ class Student:
             raise ValueError("Missing name")
         if house not in ["Gryffindor", "Hufflepuff", "Ravenclaw", "Slytherin"]:
             raise ValueError("Invalid house")
+        if patronus and patronus not in ["Stag", "Otter", "Jack Russell terrier"]:
+            raise ValueError("Invalid patronus")
         self.name = name
         self.house = house
         self.patronus = patronus
@@ -234,13 +236,13 @@ def main():
 def get_student():
     name = input("Name: ")
     house = input("House: ")
-    patronus = input("Patronus: ")
+    patronus = input("Patronus: ") or None
     return Student(name, house, patronus)
 
 if __name__ == "__main__":
     main()
 '''
-
+'''
 class Student:
     def __init__(self, name, house):
         if not name:
@@ -255,6 +257,7 @@ class Student:
 
 def main():
     student = get_student()
+    student.house = "Number Four, Private Drive"
     print(student)
 
 def get_student():
@@ -265,12 +268,96 @@ def get_student():
 
 if __name__ == "__main__":
     main()
+'''
 
+#Properties
 
+'''
+class Student:
+    def __init__(self, name, house):
+        if not name:
+            raise ValueError("Missing name")
+        self.name = name
+        self.house = house
+    
+    def __str__(self):
+        return f"{self.name} from {self.house}"
+    
+    #Gatter
+    @property
+    def house(self):
+        return self._house
+        
+    #Setter
+    @house.setter
+    def house(self, house):
+        if house not in ["Gryffindor", "Hufflepuff", "Ravenclaw", "Slytherin"]:
+            raise ValueError("Invalid house")
+        self._house = house
 
+def main():
+    student = get_student()
+    #student.house = "Number Four, Private Drive"
+    print(student)
 
+def get_student():
+    name = input("Name: ")
+    house = input("House: ")
+    return Student(name, house)
 
+if __name__ == "__main__":
+    main()
+'''
+'''
+class Student:
+    def __init__(self, name, house):
+        if not name:
+            raise ValueError("Missing name")
+        self.name = name
+        self.house = house
+    
+    def __str__(self):
+        return f"{self.name} from {self.house}"
 
+    #Gatter for name
+    @property
+    def name(self):
+        return self._name
+
+    #Setter for name
+    @name.setter
+    def name(self, name):
+        if not name:
+            raise ValueError("Missing name")
+        self._name = name
+
+    #Gatter for house
+    @property
+    def house(self):
+        return self._house
+        
+    #Setter for house
+    @house.setter
+    def house(self, house):
+        if house not in ["Gryffindor", "Hufflepuff", "Ravenclaw", "Slytherin"]:
+            raise ValueError("Invalid house")
+        self._house = house
+
+def main():
+    student = get_student()
+    #student._house = "Number Four, Private Drive"
+    print(student)
+
+def get_student():
+    name = input("Name: ")
+    house = input("House: ")
+    return Student(name, house)
+
+if __name__ == "__main__":
+    main()
+'''
+
+#connecting to previous work
 
 
 
