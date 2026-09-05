@@ -101,13 +101,51 @@ cat.meow()
 
 # Type Hints
 # To run mypy, command -> python -m mypy filename.py
-
+'''
 def meow(n: int):
     for _ in range(n):
         print("meow")
 
 number: int = int(input("number: "))
 meow(number)
+'''
+
+'''
+def meow(n: int) -> None:       # "-> None" means the function return none as return value
+    for _ in range(n):
+        print("meow")
+
+number: int = int(input("number: "))
+meows: str = meow(number)
+print(meow)
+'''
+
+'''
+def meow(n: int) -> str:
+    return "meow\n" * n
+
+number: int = int(input("number: "))
+meows: str = meow(number)
+print(meows, end="")
+'''
+
+#Docstrings
+
+def meow(n: int) -> str:
+    """
+    Meow n times.
+    :param n: number of times to meow
+    :type n:int
+    :raise TypeError: If n is not an int
+    :return : A string of n meows, one per line
+    :rtype : str
+    """
+    return "meow\n" * n
+
+number: int = int(input("number: "))
+meows: str = meow(number)
+print(meows, end="")
+
 
 
 
