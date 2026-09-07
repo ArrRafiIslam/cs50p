@@ -192,21 +192,84 @@ args = parser.parse_args()
 for _ in range(args.n):
     print("meow")
 '''
+'''
+print("Hello again!")
+'''
 
+#Unpacking
+'''
+first, _ = input("What's your name? ").split(" ")
+print(f"hello, {first}")
+'''
 
+'''
+def total(galleons, sickles, knuts):
+    return (galleons * 17 + sickles) * 29 + knuts
 
+print(total(100, 50, 25), "Knuts")
+'''
 
+'''
+def total(galleons, sickles, knuts):
+    return (galleons * 17 + sickles) * 29 + knuts
 
+coins = [100, 50, 25]
 
+print(total(coins[0], coins[1], coins[2]), "Knuts")
+'''
 
+'''
+def total(galleons, sickles, knuts):
+    return (galleons * 17 + sickles) * 29 + knuts
 
+coins = [100, 50, 25]
 
+print(total(*coins), "Knuts")
+'''
 
+'''
+def total(galleons, sickles, knuts):
+    return (galleons * 17 + sickles) * 29 + knuts
 
+print(total(galleons=100, sickles=50, knuts=25), "Knuts")
+'''
 
+'''
+def total(galleons, sickles, knuts):
+    return (galleons * 17 + sickles) * 29 + knuts
 
+coins = {"galleons": 100, "sickles": 50, "knuts": 25}
 
+print(total(coins["galleons"], coins["sickles"], coins["knuts"]), "Knuts")
+'''
 
+'''
+def total(galleons, sickles, knuts):
+    return (galleons * 17 + sickles) * 29 + knuts
+
+coins = {"galleons": 100, "sickles": 50, "knuts": 25}
+
+print(total(**coins), "Knuts")
+'''
+
+#args & kwargs
+'''
+print(*objects, sep=' ', end='\n', file=sys.stdout, flush=False)
+'''
+
+'''
+def f(*args, **kwargs):
+    print("Positional:", args)
+
+f(100, 50, 25)
+'''
+
+'''
+def f(*args, **kwargs):
+    print("Named:", kwargs)
+
+f(galleons=100, sickles=50, knuts=25)
+'''
 
 
 
